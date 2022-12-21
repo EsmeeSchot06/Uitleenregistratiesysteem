@@ -1,18 +1,16 @@
-<?php
-session_start();
-$message = "";
-if(count($_POST)>0) {
-    include_once 'datadase.php';
-    $result = mysqli_query($conn, "SELECT * FROM users WHERE Email='" . $POST['Email'] . "' password='" . $_POST['password'] . "' ");
-}
-
-?>
 <!DOCTYPE html>
 <html lang="nl">
 <head>
 
 </head>
 <body>
-    
+   <div>
+    <form method="post">
+        <input type="hidden" name="from"value="login">
+        <input type="text" name="Email" placeholder="Email" required><br>
+        <input type="password" name="password" placeholder="Wachtwoord" required><br>
+		<button type="submit">Inloggen</button>
+    </form>
+   </div> 
 </body>
 </html>
