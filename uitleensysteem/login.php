@@ -5,7 +5,7 @@
       .Email{
         position:absolute;
             top: 20vh;
-            height: 4vh;
+            height: 7vh;
             width: 20vw;
             background-color: #fff;
             color: #000;
@@ -18,7 +18,7 @@
       .password{
         position:absolute;
             top: 30vh;
-            height: 4vh;
+            height: 7vh;
             width: 20vw;
             background-color: #fff;
             color: #000;
@@ -31,7 +31,7 @@
       .inloggen{
         position:absolute;
             top: 40vh;
-            height: 4vh;
+            height: 6vh;
             width: 5vw;
             background-color: #fff;
             color: #000;
@@ -39,7 +39,7 @@
             border-radius: 1vw;
             text-decoration: none;
             text-align: center;
-            margin-left: 48%;
+            margin-left: 55%;
     }
     .inloggen:hover{
       cursor: pointer;
