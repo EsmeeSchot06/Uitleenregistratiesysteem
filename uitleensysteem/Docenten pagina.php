@@ -19,9 +19,12 @@
     margin-top: 100px;
     margin-right: 100px;
     margin-bottom: 100px;
-    margin-left: 250px;
+    margin-left: 210px;
     text-align: center;
     font-size: 30px;
+    }
+    button {
+    padding: 20px 40px 20px 40px;
     }
     </style>
 </head>
