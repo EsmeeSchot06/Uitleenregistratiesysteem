@@ -13,12 +13,10 @@ input {
   text-align: center;
   font-family: arial;
 }
-
 .price {
   color: grey;
   font-size: 22px;
 }
-
 .card button {
   border: none;
   outline: 0;
@@ -30,9 +28,12 @@ input {
   width: 100%;
   font-size: 18px;
 }
-
 .card button:hover {
   opacity: 0.7;
+}
+.flex-container {
+  display: flex;
+  flex-direction: column;
 }
 </style>
 </head>
@@ -44,6 +45,11 @@ input {
     </form>
   </div>
 </div>
-
+<div class="card">
+  <div>
+<p>iPad</p>
+<div class="flex-container"></div> 
+</div>
+</div>
 </body>
 </html>
