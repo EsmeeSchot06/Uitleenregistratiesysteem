@@ -33,7 +33,9 @@ input {
 }
 .flex-container {
   display: flex;
-  flex-direction: ;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .flex-container > div {
   background-color: #f1f1f1;
@@ -42,6 +44,8 @@ input {
   text-align: center;
   line-height: 75px;
   font-size: 30px;
+  width: 100%;
+  height: 200px;
 }
 </style>
 </head>
