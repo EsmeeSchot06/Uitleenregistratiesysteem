@@ -12,7 +12,9 @@ if(isset($_POST['save']))
         $_SESSION["Email"] = $row['Email'];
         $_SESSION["password"] = $row['password'];
     }
-    
+    else{
+        echo "invalid emailor password"
+    }
 }
 ?>
 <!DOCTYPE html>
@@ -22,6 +24,5 @@ if(isset($_POST['save']))
     </style>
 </head>
 <body>
-    <h1> u bent ingelogd</h1>
 </body>
 </html>
