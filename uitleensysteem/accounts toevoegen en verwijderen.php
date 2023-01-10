@@ -43,11 +43,19 @@
             text-decoration: none;
             text-align: center;
 }
+.toevoegen{
+    border: 5px solid black;
+    padding: 10px;
+    border-radius: 1vw;
+}
 </style>
 </head>
 <body>
+    <div class="toevoegen">
     <input type="email" class="email" name="email" placeholder="School e-mailadres docent" required></br></br>
     <input type="password" class="wachtwoord" name="wachtwoord" placeholder="Wachtwoord" required></br></br>
-    <button type="submit" class="knopje">Account aanmaken</button>
+    <button type="submit" class="knopje">Account aanmaken</button></br></br></br></br></br></br></br></br></br></br>
+    </div>
+
 </body>
 </html>
