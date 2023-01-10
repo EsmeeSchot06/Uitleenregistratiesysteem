@@ -1,19 +1,12 @@
 <?php
-$serverName = "localhost";
-$dBUsername = "root";
-$dBPaswordname = "";
-$dBName = "uitleen_registratiesysteem";
-
-$conn = mysqli_connect( $host, $serverName, $dBUsername, $dBPaswordname, $dBName);
-
-if (!$conn) {
-    die("connection failed: " . mysqli_connect_error());
-}
-
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="nl">
   <head>
+  <meta charset="utf_8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <Style>
       .Email{
         position:absolute;
@@ -63,13 +56,22 @@ if (!$conn) {
     </Style>
   </head>
   <body>
-    <div>
-      <form method="post">
-          <input type="hidden" name="from"value="login">
-          <input class="Email" type="text" name="Email" placeholder="Email" required><br>
-          <input class="password" type="password" name="password" placeholder="Wachtwoord" required><br>
-		      <button class="inloggen" type="submit">Inloggen</button>
-      </form>
-    </div> 
+  <meta charset="utf_8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<div class="signup-form">
+    <form action="loginProcess.php" method="post" enctype="multipart/form-data">
+		        <h2>Login</h2>
+                <p class="hint-text">Enter Login Details</p>
+        <div class="form-group">
+        	    <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+        </div>
+		        <div class="form-group">
+            <input type="password" class="form-control" name="pass" placeholder="Password" required="required">
+        </div>
+		        <div class="form-group">
+            <button type ="submit" name="save" class="btn btn-success btn-lgn btn-block">login</button>
+        </div>
+    </form>
+</div> 
   </body>
 </html>
