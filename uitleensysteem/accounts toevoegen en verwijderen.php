@@ -21,10 +21,21 @@
             color: #fff;
             border-color: #000;
 }
+.email{
+    top: 40vh;
+            height: 6vh;
+            width: 12vw;
+            background-color: #fff;
+            color: #000;
+            border: 5px solid black;
+            border-radius: 1vw;
+            text-decoration: none;
+            text-align: center;
+}
 </style>
 </head>
 <body>
-    <input type="email" name="email" placeholder="School e-mailadres docent" required></br></br>
+    <input type="email" class="email" name="email" placeholder="School e-mailadres docent" required></br></br>
     <input type="password" name="wachtwoord" placeholder="Wachtwoord" required></br></br>
     <button type="submit" class="knopje">Account aanmaken</button>
 </body>
