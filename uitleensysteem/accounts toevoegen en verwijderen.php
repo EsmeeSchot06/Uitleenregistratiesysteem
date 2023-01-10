@@ -8,6 +8,6 @@
 <body>
     <input type="email" name="email" placeholder="School e-mailadres docent" required></br></br>
     <input type="password" name="wachtwoord" placeholder="Wachtwoord" required></br></br>
-    <button type="submit" style="align: right;">
+    <button type="submit">Account aanmaken</button>
 </body>
 </html>
