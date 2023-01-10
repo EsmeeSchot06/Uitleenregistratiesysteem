@@ -19,23 +19,23 @@
     margin-top: 100px;
     margin-right: 100px;
     margin-bottom: 100px;
-    margin-left: 210px;
+    margin-left: 120px;
     text-align: center;
     font-size: 30px;
     }
     button {
-    padding: 20px 40px 20px 40px;
+    padding: 40px 80px 40px 80px;
     }
     </style>
 </head>
 <body>
     <div class="flex-container">
-    <div><button type="submit">Uitlenen</button></div>
-    <div><button type="submit">Apparaten</button></div>
+    <div><button type="submit">Apparaten uitlenen</button></div>
+    <div><button type="submit">Overzicht apparaten</button></div>
     </div>
     <div class="flex-container">
-    <div><button type="submit">Retourneren</button></div>
-    <div><button type="submit">Accounts</button></div>
+    <div><button type="submit">Apparaten retourneren</button></div>
+    <div><button type="submit">Accounts beheren</button></div>
     </div>
 </body>
 </html>
