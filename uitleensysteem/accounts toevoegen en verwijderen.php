@@ -4,7 +4,16 @@
 <style>
 .knopje{
     position:absolute;
-    margin-left:60%;
+    top: 40vh;
+            height: 6vh;
+            width: 5vw;
+            background-color: #fff;
+            color: #000;
+            border:5px solid black;
+            border-radius: 1vw;
+            text-decoration: none;
+            text-align: center;
+            margin-left:60%;
 }
 </style>
 </head>
