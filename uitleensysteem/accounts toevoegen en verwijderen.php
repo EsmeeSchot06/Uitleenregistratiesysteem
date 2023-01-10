@@ -6,7 +6,8 @@
     </style>
 </head>
 <body>
-    <p>School e-mailadres docent</p>
-    <p>Wachtwoord aanmaken</p>
+    <input type="email" name="email" placeholder="School e-mailadres docent" required></br></br>
+    <input type="password" name="wachtwoord" placeholder="Wachtwoord" required></br></br>
+    <button type="submit" style="align: right;">
 </body>
 </html>
