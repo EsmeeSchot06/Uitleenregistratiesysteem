@@ -48,6 +48,30 @@
     padding: 10px;
     border-radius: 1vw;
 }
+.verwijderen{
+    border: 5px solid black;
+    padding: 10px;
+    border-radius: 1vw;
+}
+.knopje1{
+    position:absolute;
+    top: 80vh;
+            height: 6vh;
+            width: 6vw;
+            background-color: #fff;
+            color: #000;
+            border:5px solid black;
+            border-radius: 1vw;
+            text-decoration: none;
+            text-align: center;
+            margin-left:39%;
+}
+.knopje:hover{
+    cursor: pointer;
+            background-color: #000;
+            color: #fff;
+            border-color: #000;
+}
 </style>
 </head>
 <body>
@@ -55,6 +79,11 @@
     <input type="email" class="email" name="email" placeholder="School e-mailadres docent" required></br></br>
     <input type="password" class="wachtwoord" name="wachtwoord" placeholder="Wachtwoord" required></br></br>
     <button type="submit" class="knopje">Account aanmaken</button></br></br></br></br></br></br></br></br></br></br>
+    </div>
+</br>
+    <div class="verwijderen">
+    <input type="email" class="email" name="email" placeholder="School e-mailadres docent" required>
+    <button type="submit" class="knopje1">Account verwijderen</button></br></br></br></br></br></br></br></br></br></br></br></br>
     </div>
 
 </body>
