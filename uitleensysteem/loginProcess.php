@@ -15,3 +15,13 @@ if(isset($_POST['save']))
     
 }
 ?>
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <style>
+    </style>
+</head>
+<body>
+    <h1> u bent ingelogd</h1>
+</body>
+</html>
