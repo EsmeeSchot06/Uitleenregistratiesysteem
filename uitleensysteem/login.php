@@ -3,11 +3,15 @@
 ?>
 <!DOCTYPE html>
 <html lang="nl">
-  <head>
-  <meta charset="utf_8"> 
+<head>
+<meta charset="utf_8"> 
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <Style>
+  <Style>
+      .login{
+        position:absolute;
+            top:10Vh;
+            margin-left: 48%;
+      }
       .Email{
         position:absolute;
             top: 20vh;
@@ -54,24 +58,23 @@
             border-color: #000;
     }
     </Style>
-  </head>
-  <body>
-  <meta charset="utf_8"> 
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<div class="signup-form">
+</head>
+<body>
+  <div>
     <form action="loginProcess.php" method="post" enctype="multipart/form-data">
+            <div class="login">
 		        <h2>Login</h2>
-                <p class="hint-text">Enter Login Details</p>
-        <div class="form-group">
-        	    <input type="email" class="form-control" name="email" placeholder="Email" required="required">
+            </div>
+        <div>
+        	    <input type="text" class="Email" name="email" placeholder="Email" required="required"><br>
         </div>
-		        <div class="form-group">
-            <input type="password" class="form-control" name="pass" placeholder="Password" required="required">
+		        <div>
+            <input type="password" class="password" name="pass" placeholder="Password" required="required"><br>
         </div>
-		        <div class="form-group">
-            <button type ="submit" name="save" class="btn btn-success btn-lgn btn-block">login</button>
+		        <div >
+            <button type ="submit" name="save" class="inloggen">login</button>
         </div>
     </form>
-</div> 
-  </body>
+  </div> 
+</body>
 </html>
