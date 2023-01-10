@@ -6,7 +6,7 @@
     position:absolute;
     top: 40vh;
             height: 6vh;
-            width: 5vw;
+            width: 6vw;
             background-color: #fff;
             color: #000;
             border:5px solid black;
