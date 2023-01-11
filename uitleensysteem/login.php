@@ -5,40 +5,32 @@ session_start();
 include("database.php");
 include("functions.php");
 
-if($_SERVER["REQUEST_METHOD"] == "post")
-{
+if($_SERVER["REQUEST_METHOD"] == "POST") {
    //somthing was posted 
   $Email = $_POST['Email'];
   $password = $_POST['password'];
-
-  if (!empty($Email) && !empty($password) && !is_numeric($Email))
-  {
-
+  
+  if (!empty($Email) && !empty($password)) {
     //read from database
-    $query = "select * from users where Email = '$Email' limit 1";
+    $query = "select * from users where Email = '".$Email."' limit 1";
 
     $result = mysqli_query($con, $query);
-    
-    if($result)
-    {
-      if($result && mysqli_num_rows($result)> 0)
-      {
+    if($result) {
+      if($result->num_rows == 1) {
 
         $user_data = mysqli_fetch_assoc($result);
         
-        if($user_data['password'] === $password)
-        {
-          $_SESSION['user_id'] = $user_data['user_id '];
-          header("location index.php");
+        if($user_data['password'] == $password) {
+          $_SESSION['user_id'] = $user_data['user_id'];
+          header("location: index.php");
           die;
         }
       }
     }
     echo "Email of wachtwoord is fout!";
 
-  }else
-  {
-    echo "Email of wachtwoord is fout!";
+  }else {
+    echo "Email of wachtwoord is niet ingevult!";
   }
 }
 ?>
@@ -48,7 +40,7 @@ if($_SERVER["REQUEST_METHOD"] == "post")
 <head>
   <title>login</title>
 </head>
-<bodY>
+<body>
     <style type="text/css">
     
     #text{
@@ -79,13 +71,13 @@ if($_SERVER["REQUEST_METHOD"] == "post")
     </style>
 
     <div id="box">
-      <form method="post">
+      <form method="POST">
         <div style="font-size:20px;margin:10px; ">login</div>
-      <input id="text" type="text" name="Email"><br><br>
-      <input id="text" type="password" name="password"><br><br>
+      <input id="text" type="text" name="Email" required><br><br>
+      <input id="text" type="password" name="password" required><br><br>
       <input id="button" type="submit" value="login"><br><br>
       </form>
     </div>
-</bodY>
+</body>
 </html>
             

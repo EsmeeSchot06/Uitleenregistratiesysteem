@@ -14,10 +14,10 @@ $user_data = check_login($con);
 </head>
 <body>
 
-    <a href="/logout.php">logout</a>
+    <a href="logout.php">logout</a>
     <h1>dit is de index pagina</h1>
 
     <br>
-    hello, Username.
+    hello, <?php echo $user_data['Email']; ?>
 </body>
 </html>

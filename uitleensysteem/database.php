@@ -1,12 +1,11 @@
 <?php
 
-$dbhost = "localhost";
+$dBHost = "localhost";
 $dBUsername = "root";
 $dBPaswordname = "";
 $dBName = "uitleen_registratiesysteem";
 
+$con = mysqli_connect($dBHost, $dBUsername, $dBPaswordname, $dBName);
 
-if ($con = mysqli_connect( $dbhost, $dBUsername, $dBPaswordname, $dBName)) {
-    die("faild to connect!");
-}
+
 ?>

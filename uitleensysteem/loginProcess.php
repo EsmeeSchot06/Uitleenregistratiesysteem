@@ -8,7 +8,6 @@ if(isset($_POST['save']))
     $row = mysqli_fetch_array($sql);
     if(is_array($row));
     {
-    
         $_SESSION["Email"] = $row['Email'];
         $_SESSION["password"] = $row['password'];
         echo 'ingelogd';
