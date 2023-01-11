@@ -66,7 +66,7 @@
             text-align: center;
             margin-left:39%;
 }
-.knopje:hover{
+.knopje1:hover{
     cursor: pointer;
             background-color: #000;
             color: #fff;
@@ -88,3 +88,21 @@
 
 </body>
 </html>
+<?php
+$con->query("
+INSERT INTO
+
+(
+email,
+wachtwoord,
+email
+) VALUES
+(
+'".$con->real_escape_string($_POST['email'])."',
+'".$con->real_escape_string($_POST['wachtwoord'])."',
+'".$con->real_escape_string($_POST['email'])."',
+
+)
+
+");
+?>
