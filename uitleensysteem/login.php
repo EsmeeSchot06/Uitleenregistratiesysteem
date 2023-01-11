@@ -1,4 +1,43 @@
 <?php
+
+session_start();
+
+include("database.php");
+include("functions.php");
+
+if($_SERVER["REQUEST_METHOD"] == "post")
+{
+   //somthing was posted 
+  $Email = $_POST['Email'];
+  $password = $_POST['password'];
+
+  if (!empty($Email) && !empty($password) && !is_numeric($Email))
+  {
+
+    //read from database
+    $query = "select * from users where Email = '$Email' limit 1";
+
+    $result = mysqli_query($con, $query);
+    
+    if($result)
+    {
+      if($result && mysqli_num_rows($result)> 0)
+      {
+
+        $user_data = mysqli_fetch_assoc($result);
+        
+        if($user_data['password'] === $password)
+        {
+          $_SESSION['user_id'] = $user_data['user_id '];
+          header("location index.php");
+          die;
+        }
+      }
+    }
+    header("location index.php");
+    die;
+  }
+}
 ?>
 
 <!DOCTYPE html>
