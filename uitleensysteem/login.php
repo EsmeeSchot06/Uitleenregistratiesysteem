@@ -34,8 +34,11 @@ if($_SERVER["REQUEST_METHOD"] == "post")
         }
       }
     }
-    header("location index.php");
-    die;
+    echo "Email of wachtwoord is fout!";
+
+  }else
+  {
+    echo "Email of wachtwoord is fout!";
   }
 }
 ?>
