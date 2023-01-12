@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Gegenereerd op: 11 jan 2023 om 15:02
+-- Gegenereerd op: 12 jan 2023 om 14:17
 -- Serverversie: 10.4.24-MariaDB
 -- PHP-versie: 7.4.29
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `apparaten` (
   `id` int(100) NOT NULL,
-  `device` text NOT NULL,
+  `name` text NOT NULL,
   `merk` text NOT NULL,
   `type` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -38,7 +38,7 @@ CREATE TABLE `apparaten` (
 -- Gegevens worden geëxporteerd voor tabel `apparaten`
 --
 
-INSERT INTO `apparaten` (`id`, `device`, `merk`, `type`) VALUES
+INSERT INTO `apparaten` (`id`, `name`, `merk`, `type`) VALUES
 (1, 'ipad', 'appel', 'pro ');
 
 -- --------------------------------------------------------
