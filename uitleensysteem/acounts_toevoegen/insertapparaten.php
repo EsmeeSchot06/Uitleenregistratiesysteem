@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <from method="post" action="processapparatentoevoegen.php"> 
+        <form method="POST" action="processapparatentoevoegen.php"> 
             naam:<br>
             <input type="text" name="naam"> 
             <br>
@@ -12,6 +12,6 @@
             <input type="text" name="type">
             <br><br>
             <input type="submit" name="save" value="submit">
-        </from>
+        </form>
     </body>
 </html>
