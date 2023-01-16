@@ -16,6 +16,6 @@ $user_data = check_login($con);
 
     <a href="logout.php">logout</a>
     <p>hello, <?php echo $user_data['Email']; ?> je bent ingelogd </p>
-    <p>klik <a href="Docenten_pagina.php">here</a> om verder te gaan</p>
+    <p>klik <a href="Docenten_pagina.php">hier</a> om verder te gaan</p>
 </body>
 </html>
