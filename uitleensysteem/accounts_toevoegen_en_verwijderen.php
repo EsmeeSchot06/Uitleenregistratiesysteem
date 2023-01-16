@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     $password = $_POST['password'];
     if(!empty($Email) && !empty($password)) {
         //save to database
-        $user_id = random_number(20);
+        $user_id = random_num(20);
         $query = "insert into users (user_id,Email,password) values ('$user_id','$Email','$password')";
         mysqli_query($con, $query);
         header("Location: login.php");
@@ -17,6 +17,14 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
         echo "Please enter some valid information!";
     }
 }
+session_start();
+include "config.php";
+	$users_id = count($_POST["users"]);
+for($i=0; $i<$users_id; $i++) 
+{
+	mysql_query("delete from `user_update` where `id` = '".mysql_real_escape_string(trim(strip_tags($_POST["users"][$i])))."'");
+}
+	header("location: index.php");
 ?>
 
 <!DOCTYPE html>
