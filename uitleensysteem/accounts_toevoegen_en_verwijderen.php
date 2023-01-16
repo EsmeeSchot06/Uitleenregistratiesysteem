@@ -8,7 +8,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     $password = $_POST['password'];
     if(!empty($Email) && !empty($password)) {
         //save to database
-        $user_id = random_num(20);
+        $user_id = random_number(20);
         $query = "insert into users (user_id,Email,password) values ('$user_id','$Email','$password')";
         mysqli_query($con, $query);
         header("Location: login.php");
