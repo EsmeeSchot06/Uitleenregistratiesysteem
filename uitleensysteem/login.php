@@ -42,29 +42,35 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 <body>
     <style type="text/css">
-    
     #text{
 
       height: 25px;
-      border-radius: 5px;
-      padding: 4px;
-      border: solid thin #aaa;
-
+      height: 6vh;
+            width: 20vw;
+            background-color: #fff;
+            color: #000;
+            border: 5px solid black;
+            border-radius: 1vw;
+            text-decoration: none;
+            text-align: center;
     }
     #button{
 
-      padding:10px;
-      width:100px;
-      color: white;
-      background-color: lightblue;
-      border: none;
-
+      height: 6vh;
+            width: 6vw;
+            background-color: #fff;
+            color: #000;
+            border:5px solid black;
+            border-radius: 1vw;
+            text-decoration: none;
+            text-align: center;
+            margin-left:60%;
     }
     #box{
 
       background-color: grey;
       margin: auto;
-      width: 300px;
+      width: 400px;
       padding: 20px;
 
     }
