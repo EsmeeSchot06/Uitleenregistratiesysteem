@@ -29,6 +29,7 @@
     </style>
 </head>
 <body>
+    <p>klik <a href="index.php"> hier </a> om uit te loggen </p>
     <div class="flex-container">
     <div><button type="submit">Apparaten uitlenen</button></div>
     <div><button type="submit">Overzicht apparaten</button></div>

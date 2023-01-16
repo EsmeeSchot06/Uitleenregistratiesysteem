@@ -15,9 +15,7 @@ $user_data = check_login($con);
 <body>
 
     <a href="logout.php">logout</a>
-    <h1>dit is de index pagina</h1>
-
-    <br>
-    hello, <?php echo $user_data['Email']; ?>
+    <p>hello, <?php echo $user_data['Email']; ?> je bent ingelogd </p>
+    <p>klik <a href="Docenten_pagina.php">here</a> om verder te gaan</p>
 </body>
 </html>
