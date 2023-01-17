@@ -1,22 +1,25 @@
 <?php
+session_start();
 include ("database.php");
-if(isset($_POST['save']))
-{
-    $naam = $_POST['naam'];
-    $merk = $_POST['merk'];
-    $type = $_POST['type'];
-    $sql = "INSERT INTO apparaten (naam,merk,type) VALUES ('$naam','$merk','$type')";
-    if (mysqli_query($con, $sql)){
-        echo "nieuw apparaat toegevoegd";
-    } else{
-        echo "Error: " . $sql . "
-            " . mysqli_error($con);
-    }
-    mysqli_close($con);
-    }elseif($_POST['form']=="delete"){
-        $sql = "DELETE FROM apparaten WHERE naam='".$_POST['naam']."'";
+if($_SERVER['REQUEST_METHOD'] == "POST") {
+    if (isset($_POST['save'])){
+        $naam = $_POST['naam'];
+        $merk = $_POST['merk'];
+        $type = $_POST['type'];
+        $sql = "INSERT INTO apparaten (naam,merk,type) VALUES ('".$naam."','".$merk."','".$type."')";
+        if(mysqli_query($con, $sql)) {
+            echo "mieuwe apparaat toegevoegd";
+        }else{
+            echo "Error: " . $sql . "
+                " . mysqli_error($con);
+        }
+    }elseif($_POST['accept_button']=="delete"){
+        $sql = "DELETE FROM apparaten WHERE id='".$_POST['art-select']."'";
         mysqli_query($con, $sql);
     }
+}
+
+$artiknaam = $con->query("SELECT * FROM apparaten");
 
 ?> 
 <!DOCTYPE html>
@@ -135,16 +138,20 @@ if(isset($_POST['save']))
             </div>
             <br><br>
             <input type="submit" name="save" value="submit" class="knopje2">
-        </form> 
-        </div>
-        <div>
-        <from method="POST" > 
-        <div class="verwijderen">
-        <input type="hidden" name="form" value="delete">
-        <input type="naam" class="naam" name="email" placeholder="naam" required>
-        <button type="submit" class="knopje4">apparaat verwijderen</button></br></br></br></br></br></br></br></br></br></br></br></br>
-        </div>
         </form>
+        </div>
+        <br>
+        <div class="verwijderen">
+            <form method="POST">
+                <input type="hidden" name="from" value="delete">
+                <select name="art-select" value="">
+                    <option value="">Selecteer een categorie</option>
+                        <?php while ($row = $artiknaam->fetch_assoc()) { ?>
+                    <option value="<?php echo $row['id'] ?>"><?php echo $row['naam'] ?></option>
+                        <?php } ?>
+                </select>
+                <button type="submit" name="accept_button" class="knopje4"> apparaat verwijderen</button>
+            </form>
         </div>
     </body>
 </html>
