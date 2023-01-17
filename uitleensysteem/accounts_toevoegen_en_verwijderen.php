@@ -3,20 +3,24 @@ session_start();
 include("database.php");
 include("functions.php");
 if($_SERVER['REQUEST_METHOD'] == "POST") {
-    //something was posted
-    $user_name = $_POST['email'];
-    $password = $_POST['wachtwoord'];
-    if(!empty($user_name) && !empty($password)) {
-        //save to database
-        $query = "insert into users (Email,password) values ('$user_name','$password')";
-        mysqli_query($con, $query);
-        header("Location: login.php");
-        die;
-    }else {
-        echo "Please enter some valid information!";
+    if($_POST['form']=="toevoegen"){
+        //something was posted
+        $user_name = $_POST['email'];
+        $password = $_POST['wachtwoord'];
+        if(!empty($user_name) && !empty($password)) {
+            //save to database
+            $query = "insert into users (Email,password) values ('$user_name','$password')";
+            mysqli_query($con, $query);
+            header("Location: login.php");
+            die;
+        }else {
+            echo "Please enter some valid information!";
+        }
+    }elseif($_POST['form']=="delete"){
+        $sql = "DELETE FROM users WHERE Email='".$_POST['email']."'";
+        mysqli_query($con, $sql);
     }
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -98,6 +102,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 <body>
     <form method="POST">
     <div class="toevoegen">
+    <input type="hidden" name="form" value="toevoegen">
     <input type="email" class="email" name="email" placeholder="School e-mailadres docent" required></br></br>
     <input type="password" class="wachtwoord" name="wachtwoord" placeholder="Wachtwoord" required></br></br>
     <button type="submit" class="knopje">Account aanmaken</button></br></br></br></br></br></br></br></br></br></br>
@@ -106,6 +111,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     </br>
     <form method="POST">
     <div class="verwijderen">
+    <input type="hidden" name="form" value="delete">
     <input type="email" class="email" name="email" placeholder="School e-mailadres docent" required>
     <button type="submit" class="knopje1">Account verwijderen</button></br></br></br></br></br></br></br></br></br></br></br></br>
     </div>
