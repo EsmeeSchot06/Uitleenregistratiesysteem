@@ -1,4 +1,23 @@
 <?php
+include ("database.php");
+if(isset($_POST['save']))
+{
+    $naam = $_POST['naam'];
+    $merk = $_POST['merk'];
+    $type = $_POST['type'];
+    $sql = "INSERT INTO apparaten (naam,merk,type) VALUES ('$naam','$merk','$type')";
+    if (mysqli_query($con, $sql)){
+        echo "nieuw apparaat toegevoegd";
+    } else{
+        echo "Error: " . $sql . "
+            " . mysqli_error($con);
+    }
+    mysqli_close($con);
+    }elseif($_POST['form']=="delete"){
+        $sql = "DELETE FROM apparaten WHERE naam='".$_POST['naam']."'";
+        mysqli_query($con, $sql);
+    }
+
 ?> 
 <!DOCTYPE html>
 <html>
@@ -82,13 +101,24 @@
             color: #fff;
             border-color: #000;
 }
+    .naam1{
+        height: 6vh;
+            width: 20vw;
+            background-color: #fff;
+            color: #000;
+            border: 5px solid black;
+            border-radius: 1vw;
+            text-decoration: none;
+            text-align: center;
+            margin-left:31% ; 
+    }
 </style>
 </head>
     <body>
         <a href="Docenten_pagina.php"><button type="submit" class="knopje3">docenten pagina</button></a>
         <br>
         <div class="toevoegen">
-        <form method="POST" action="processapparatentoevoegen.php"> 
+        <form method="POST" > 
             <div class="naam">
             naam:<br>
             <input type="text" name="naam" > 
@@ -106,6 +136,15 @@
             <br><br>
             <input type="submit" name="save" value="submit" class="knopje2">
         </form> 
+        </div>
+        <div>
+        <from method="POST" > 
+        <div class="verwijderen">
+        <input type="hidden" name="form" value="delete">
+        <input type="naam" class="naam" name="email" placeholder="naam" required>
+        <button type="submit" class="knopje4">apparaat verwijderen</button></br></br></br></br></br></br></br></br></br></br></br></br>
+        </div>
+        </form>
         </div>
     </body>
 </html>
