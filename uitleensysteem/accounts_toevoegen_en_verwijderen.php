@@ -100,6 +100,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 </style>
 </head>
 <body>
+    <P>klik <a href="Docenten_pagina.php">hier</a> om weer naar de docenten pagina te maken  </P>
     <form method="POST">
     <div class="toevoegen">
     <input type="hidden" name="form" value="toevoegen">
