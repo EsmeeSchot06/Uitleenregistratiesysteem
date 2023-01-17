@@ -80,7 +80,7 @@ input {
         <?php
         if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) { ?>
-          <div><a><?= $row["id"] .$row["name"] .$row["merk"] .$row["type"] ;?></a></div>
+          <div><a><?= $row["name"]." ".$row["merk"]." ".$row["type"] ;?></a></div>
         <?php }}else{?>Geen items gevonden<?php }?>
       </div>
   </body>
