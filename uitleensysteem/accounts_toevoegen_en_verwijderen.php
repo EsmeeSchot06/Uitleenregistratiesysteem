@@ -97,10 +97,29 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
             color: #fff;
             border-color: #000;
 }
+.knopje3{
+        position:absolute;
+            height: 6vh;
+            width: 6vw;
+            background-color: #fff;
+            color: #000;
+            border:5px solid black;
+            border-radius: 1vw;
+            text-decoration: none;
+            text-align: center;
+            margin-left:5%;  
+    }
+    .knopje3:hover{
+    cursor: pointer;
+            background-color: #000;
+            color: #fff;
+            border-color: #000;
+}
 </style>
 </head>
 <body>
-    <P>klik <a href="Docenten_pagina.php">hier</a> om weer naar de docenten pagina te maken  </P>
+    <a href="Docenten_pagina.php"><button type="submit" class="knopje3">docenten pagina</button></a>
+    <br><br><br><br>
     <form method="POST">
     <div class="toevoegen">
     <input type="hidden" name="form" value="toevoegen">
