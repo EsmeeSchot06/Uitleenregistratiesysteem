@@ -67,13 +67,6 @@ input {
 </style>
 </head>
   <body>
-      <div class="topnav">
-        <div class="search-container">
-            <input type="text" placeholder="Search" name="search">
-            <button type="submit">Submit</button>
-          </form>
-        </div>
-      </div>
       <div class="flex-container">
       </div>
       <div class="devices">
