@@ -1,3 +1,25 @@
+<?php
+session_start();
+include("database.php");
+// Check connection
+if ($con->connect_error) {
+  die("Connection failed: " . $con->connect_error);
+}
+
+$sql = "SELECT id, name, merk, type FROM apparaten";
+$result = $con->query($sql);
+
+if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "id: " . $row["id"]. " - Name: " . $row["name"]. " " . $row["merk"]. " " . $row["type"];
+  }
+} else {
+  echo "0 results";
+}
+$con->close();
+?>
+
 <!DOCTYPE html>
 <html lang="nl">
 <head>
@@ -58,14 +80,6 @@ input {
   </div>
 </div>
 <div class="flex-container">
-  <div>Product 1</div>
-  <div>Product 2</div>
-  <div>Product 3</div>  
-  <div>Product 4</div>
-  <div>Product 5</div>
-  <div>Product 6</div>  
-  <div>Product 7</div>
-  <div>Product 8</div>
 </div>
 </body>
 </html>
