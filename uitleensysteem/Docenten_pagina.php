@@ -36,10 +36,10 @@
     </div>
     <div class="flex-container">
     <div><a href="retourneer"><button type="submit"> retourneren</button></a></div>
-    <div><a herf="accounts_toevoegen_en_verwijderen.php"><button type="submit">Accounts beheren</button></a></div>
+    <div><a href="accounts_toevoegen_en_verwijderen.php"><button type="submit">Accounts beheren</button></a></div>
     </div>
     <div class="flex-container">
-    <div><a herf="apparaten_toevoegen_verwijderen.php"><button type="submit">Apparaten beheren</button></a></div>
+    <div><a href="apparaten_toevoegen_verwijderen.php"><button type="submit">Apparaten beheren</button></a></div>
     </div>
 </body>
 </html
