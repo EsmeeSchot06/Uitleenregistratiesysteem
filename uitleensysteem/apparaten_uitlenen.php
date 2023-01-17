@@ -9,14 +9,6 @@ if ($con->connect_error) {
 $sql = "SELECT id, name, merk, type FROM apparaten";
 $result = $con->query($sql);
 
-if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-    echo "id: " . $row["id"]. " - Name: " . $row["name"]. " " . $row["merk"]. " " . $row["type"];
-  }
-} else {
-  echo "0 results";
-}
 $con->close();
 ?>
 
@@ -69,17 +61,27 @@ input {
   width: 100%;
   height: 200px;
 }
+.devices {
+  text-align: center;
+}
 </style>
 </head>
-<body>
-    <div class="topnav">
-  <div class="search-container">
-      <input type="text" placeholder="Search" name="search">
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-</div>
-<div class="flex-container">
-</div>
-</body>
+  <body>
+      <div class="topnav">
+        <div class="search-container">
+            <input type="text" placeholder="Search" name="search">
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="flex-container">
+      </div>
+      <div class="devices">
+        <?php
+        if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) { ?>
+          <div><a><?= $row["id"] .$row["name"] .$row["merk"] .$row["type"] ;?></a></div>
+        <?php }}else{?>Geen items gevonden<?php }?>
+      </div>
+  </body>
 </html>
