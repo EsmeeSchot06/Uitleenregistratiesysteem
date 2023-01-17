@@ -16,7 +16,7 @@
     display: flex;
     flex-wrap: wrap-reverse;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-right: 100px;
     margin-bottom: 100px;
     margin-left: 120px;
@@ -31,12 +31,15 @@
 <body>
     <p>klik <a href="index.php"> hier </a> om uit te loggen </p>
     <div class="flex-container">
-    <div><button type="submit">Apparaten uitlenen</button></div>
-    <div><button type="submit">Overzicht apparaten</button></div>
+    <div><a href="apparaten_uitlenen.php"><button type="submit">Apparaten uitlenen</button></a></div>
+    <div><a href="overzicht_van_alle_apparaten.php"><button type="submit">Overzicht apparaten</button></a></div>
     </div>
     <div class="flex-container">
-    <div><button type="submit">Apparaten retourneren</button></div>
-    <div><button type="submit">Accounts beheren</button></div>
+    <div><a href="retourneer"><button type="submit"> retourneren</button></a></div>
+    <div><a herf="accounts_toevoegen_en_verwijderen.php"><button type="submit">Accounts beheren</button></a></div>
+    </div>
+    <div class="flex-container">
+    <div><a herf="apparaten_toevoegen_verwijderen.php"><button type="submit">Apparaten beheren</button></a></div>
     </div>
 </body>
-</html>
+</html
