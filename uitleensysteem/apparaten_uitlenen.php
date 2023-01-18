@@ -1,23 +1,7 @@
 <?php
 session_start();
 include("database.php");
-// Check connection
-if ($con->connect_error) {
-  die("Connection failed: " . $con->connect_error);
-}
 
-$sql = "SELECT id, name, merk, type FROM apparaten";
-$result = $con->query($sql);
-
-$sql = "UPDATE apparaten SET type='uitgeleend' WHERE id='1'";
-
-if ($con->query($sql) === TRUE) {
-  echo "Apparaat is uitgeleend";
-} else {
-  echo "Er is iets misgegaan, probeer opnieuw: " . $con->error;
-}
-
-$con->close();
 ?>
 
 <!DOCTYPE html>
@@ -53,22 +37,6 @@ input {
 .card button:hover {
   opacity: 0.7;
 }
-.flex-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.flex-container > div {
-  background-color: #f1f1f1;
-  width: 100px;
-  margin: 10px;
-  text-align: center;
-  line-height: 75px;
-  font-size: 30px;
-  width: 100%;
-  height: 200px;
-}
 .devices {
   text-align: center;
 }
@@ -95,9 +63,12 @@ input {
   <body>
   <a href="Docenten_pagina.php"><button type="submit" class="knopje3">docenten pagina</button></a>
     <br>
-      <div class="flex-container">
-      </div>
-      <div class="devices">
+    <div class="devices">
+    <form method="POST">
+    <div class="updaten">
+    <input type="hidden" name="form" value="updaten">
+    </div>
+    </form>
         <?php
         if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) { ?>
