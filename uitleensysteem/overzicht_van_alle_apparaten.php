@@ -7,7 +7,6 @@
 <title>Overzicht van alle apparaten</title>
 </head>
 <body>
-https://www.youtube.com/watch?v=0mAL4UuVWbU
-
+<input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
 </body>
 </html>
