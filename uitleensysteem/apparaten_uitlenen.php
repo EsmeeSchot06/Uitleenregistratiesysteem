@@ -9,6 +9,14 @@ if ($con->connect_error) {
 $sql = "SELECT id, name, merk, type FROM apparaten";
 $result = $con->query($sql);
 
+$sql = "UPDATE apparaten SET type='uitgeleend' WHERE id='1'";
+
+if ($con->query($sql) === TRUE) {
+  echo "Apparaat is uitgeleend";
+} else {
+  echo "Er is iets misgegaan, probeer opnieuw: " . $con->error;
+}
+
 $con->close();
 ?>
 
