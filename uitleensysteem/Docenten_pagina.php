@@ -2,22 +2,24 @@
 <html lang="nl">
 <head>
     <style>
-        .knopje4{
+    .knopje3{
         position:absolute;
+            height: 6vh;
+            width: 6vw;
             background-color: #fff;
             color: #000;
             border:5px solid black;
             border-radius: 1vw;
             text-decoration: none;
             text-align: center;
-            margin-left:2%;  
+            margin-left:5%;  
     }
-    .knopje4:hover{
+    .knopje3:hover{
     cursor: pointer;
             background-color: #000;
             color: #fff;
             border-color: #000;
-    }
+}
     .flex-container {
     display: flex;
     flex-wrap: wrap-reverse;
@@ -45,7 +47,8 @@
     </style>
 </head>
 <body>
-    <a href="logout.php"><button type="submit" class="knopje4">uitloggen</button></a>
+    <a href="logout.php"><button type="submit" class="knopje3">uitloggen</button></a>
+    <br>
     <div class="flex-container">
     <div><a href="apparaten_uitlenen.php"><button type="submit">Apparaten uitlenen</button></a></div>
     <div><a href="overzicht_van_alle_apparaten.php"><button type="submit">Overzicht apparaten</button></a></div>
