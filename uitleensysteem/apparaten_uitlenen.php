@@ -1,7 +1,27 @@
 <?php
 session_start();
 include("database.php");
+$sql = "SELECT id, name, merk, type FROM apparaten";
+$result = $con->query($sql);
 
+/*if ($result->num_rows > 0) {
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+  echo "id: " . $row["id"]. " - Name: " . $row["name"]. " - merk: " . $row["merk"]. " - type: " . $row["type"];
+}
+} else {
+  echo "Geen apparaten beschikbaar";
+}*/
+
+if(isset($_GET['uitlenen'])){
+  $con->query("UPDATE apparaten SET uitlenen = '1' WHERE id='".$_GET['uitlenen']."'");
+  Header("Location: apparaten_uitlenen.php");
+}
+if(isset($_GET['retour'])){
+  $con->query("UPDATE apparaten SET uitlenen = '0' WHERE id='".$_GET['retour']."'");
+  Header("Location: apparaten_uitlenen.php");
+}
+$con->close();
 ?>
 
 <!DOCTYPE html>
@@ -72,7 +92,7 @@ input {
         <?php
         if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) { ?>
-          <div><a><?= $row["name"]." ".$row["merk"]." ".$row["type"] ;?></a></div>
+          <div><a><?= "Name: ".$row["name"]." Merk: ".$row["merk"]." Type: ".$row["type"] ;?><a href="?uitlenen=<?= $row['id']?>">Uitlenen</a></a></div>
         <?php }}else{?>Geen items gevonden<?php }?>
       </div>
   </body>
