@@ -30,9 +30,25 @@ include ("database.php");
     padding: 11px;
     border: 2px solid black;
 }
+#myMenu{ 
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+#myMenu li a {
+    padding: 12px;
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+#myMenu li a:hover{
+    background-color: #eee;
+}
 </style>
 </head>
 <body>
+<div class="row">
+    <div class="left" style="background-color: #bbb;">
     <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
 
     <ul id="myMenu">
@@ -42,5 +58,10 @@ include ("database.php");
         <li><a href="">laders</a></li>
         <li><a href="">cameras</a></li>
     </ul>
+    </div>
+    <div class="right" style="background-color: #bbb;">
+    
+    </div>
+</div>
 </body>
 </html>
