@@ -7,6 +7,7 @@
 </style>
 </head>
 <body>
-<p>
+<img src="https://cdn.discordapp.com/attachments/1065628030187339876/1065628058758959114/9k.png">
+<p>Dit zijn alle iPads</p>
 </body>
 </html>
