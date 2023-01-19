@@ -52,7 +52,7 @@ include ("database.php");
     <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
 
     <ul id="myMenu">
-        <li><a href="ipads.php">ipad</a></li>
+        <li><a href="ipads.php">ipads</a></li>
         <li><a href="laptops.php">laptops</a></li>
         <li><a href="snoeren.php">snoeren</a></li>
         <li><a href="laders.php">laders</a></li>
