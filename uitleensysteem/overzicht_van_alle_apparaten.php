@@ -60,8 +60,14 @@ include ("database.php");
     </ul>
     </div>
     <div class="right" style="background-color: #bbb;">
-    
+
     </div>
 </div>
+<script>
+function myFunction(){
+    var input, filter, ul, li, a, i;
+    
+}
+</script>
 </body>
 </html>
