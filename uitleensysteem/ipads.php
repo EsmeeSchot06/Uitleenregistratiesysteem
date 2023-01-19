@@ -1,3 +1,10 @@
+<?php
+session_start();
+include("database.php");
+$sql = "SELECT id, naam, merk, type FROM apparaten";
+$result = $con->query($sql);
+$con->close();
+?>
 <!DOCTYPE html>
 <html>
     <head>
