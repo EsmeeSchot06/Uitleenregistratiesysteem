@@ -71,17 +71,10 @@ body{
 
     <ul id="myMenu">
         <li><a href="ipads.php">ipad</a></li>
-<<<<<<< Updated upstream
         <li><a href="laptops.php">laptops</a></li>
         <li><a href="snoeren.php">snoeren</a></li>
         <li><a href="laders.php">laders</a></li>
         <li><a href="cameras.php">cameras</a></li>
-=======
-        <li><a href="">laptops</a></li>
-        <li><a href="">snoeren</a></li>
-        <li><a href="">laders</a></li>
-        <li><a href="">cameras</a></li>
->>>>>>> Stashed changes
     </ul>
     </div>
     <div class="right" style="background-color: #bbb;">
