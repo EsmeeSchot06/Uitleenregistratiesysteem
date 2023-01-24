@@ -77,7 +77,6 @@ body{
         <li><a href="cameras.php">cameras</a></li>
     </ul>
     </div>
-    
 
 </div>
 <script>
