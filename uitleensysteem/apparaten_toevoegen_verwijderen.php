@@ -20,7 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
 }
 
 $artiknaam = $con->query("SELECT * FROM apparaten");
-
+$con->close();
 ?> 
 <!DOCTYPE html>
 <html>
