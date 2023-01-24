@@ -12,15 +12,17 @@ $result = $con->query($sql);
 } else {
   echo "Geen apparaten beschikbaar";
 }*/
-
+echo "1";
 if(isset($_GET['uitlenen'])){
   $con->query("UPDATE apparaten SET uitlenen = '1' WHERE id='".$_GET['uitgeleend']."'");
   Header("Location: apparaten_uitlenen.php");
 }
+echo "2";
 if(isset($_GET['retour'])){
   $con->query("UPDATE apparaten SET uitlenen = '0' WHERE id='".$_GET['retour']."'");
   Header("Location: apparaten_uitlenen.php");
 }
+echo "3";
 $con->close();
 ?>
 
@@ -92,7 +94,7 @@ input {
         <?php
         if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) { ?>
-          <div><a><?= "Name: ".$row["naam"]." Merk: ".$row["merk"]." Type: ".$row["type"]. " - uitgeleend: " . $row["uitlenen"] ;?><a href="?uitlenen=<?= $row['id']?>">Uitlenen</a></a></div>
+          <div><a><?= "Name: ".$row["naam"]." Merk: ".$row["merk"]." Type: ".$row["type"]. " - uitlenen: " . $row["uitgeleend"] ;?><a href="?uitlenen=<?= $row['id']?>">Uitlenen</a></a></div>
         <?php }}else{?>Geen items gevonden<?php }?>
       </div>
   </body>
