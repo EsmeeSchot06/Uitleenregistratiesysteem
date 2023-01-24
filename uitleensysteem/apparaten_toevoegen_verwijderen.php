@@ -28,7 +28,7 @@ $con->close();
 <head>
 <style>
     .toevoegen{
-        margin-top:10%;
+        margin-top:8%;
         border: 5px solid black;
         padding: 10px;
         border-radius: 1vw;
@@ -116,6 +116,38 @@ $con->close();
             text-align: center;
             margin-left:31% ; 
     }
+    .verwijderen{
+        border: 5px solid black;
+        padding: 10px;
+        border-radius: 1vw;
+        height: 40vh;
+        width: 50vw;
+        margin-left: 20%;
+    }
+    .knopje4{
+        position: absolute;
+        height: 6vh;
+        width: 6vw;
+        background-color: #fff;
+        color: #000;
+        border: 5px solid black;
+        border-radius: 1vw;
+        text-decoration: none;
+        text-align: center;
+        margin-left: 5%;
+    }
+    .knopje4:hover{
+    cursor: pointer;
+            background-color: #000;
+            color: #fff;
+            border-color: #000;
+    }
+    .naam2{
+        position: absolute;
+        height: 6vh;
+        width: 6vw;
+        border: 5px solid black;
+    }
 </style>
 </head>
     <body>
@@ -143,14 +175,16 @@ $con->close();
         </div>
         <br>
         <div class="verwijderen">
+            <div class="naam1">
             <form method="POST">
-                <input type="hidden" name="form" value="delete">
+                <input  type="hidden" name="form" value="delete">
                 <select name="art-select" value="">
                     <option value="">Selecteer een categorie</option>
                         <?php while ($row = $artiknaam->fetch_assoc()) { ?>
                     <option value="<?php echo $row['id'] ?>"><?php echo $row['naam'] ?></option>
                         <?php } ?>
                 </select>
+             </div>
                 <button type="submit" name="accept_button" class="knopje4"> apparaat verwijderen</button>
             </form>
         </div>
