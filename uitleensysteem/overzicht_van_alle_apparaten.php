@@ -41,10 +41,6 @@ body{
 .left h2{
     padding-left: 8px;
 }
-.right{
-    flex: 65%;
-    padding: 15px;
-}
 #mySearch{
     width: 100%;
     font-size: 18px;
@@ -81,10 +77,7 @@ body{
         <li><a href="cameras.php">cameras</a></li>
     </ul>
     </div>
-    <div class="right" style="background-color: #bbb;">
-        <h2> pagina content</h2>
-        <p> type in de zoekbalk om naar een specifiek catogorie te zoeken</P>
-    </div>
+    
 
 </div>
 <script>
