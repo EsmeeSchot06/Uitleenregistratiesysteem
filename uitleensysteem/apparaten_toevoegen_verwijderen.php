@@ -6,9 +6,9 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
         $naam = $_POST['naam'];
         $merk = $_POST['merk'];
         $type = $_POST['type'];
-        $sql = "INSERT INTO apparaten (naam,merk,type) VALUES ('".$naam."','".$merk."','".$type."')";
+        $sql = "INSERT INTO apparaten (naam, merk, type) VALUES ('".$naam."','".$merk."','".$type."')";
         if(mysqli_query($con, $sql)) {
-            echo "mieuwe apparaat toegevoegd";
+            echo "nieuw apparaat toegevoegd";
         }else{
             echo "Error: " . $sql . "
                 " . mysqli_error($con);
@@ -16,6 +16,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
     }elseif($_POST['accept_button']=="delete"){
         $sql = "DELETE FROM apparaten WHERE id='".$_POST['art-select']."'";
         mysqli_query($con, $sql);
+        echo "Apparaat verwijderd";
     }
 }
 
@@ -143,7 +144,7 @@ $con->close();
         <br>
         <div class="verwijderen">
             <form method="POST">
-                <input type="hidden" name="from" value="delete">
+                <input type="hidden" name="form" value="delete">
                 <select name="art-select" value="">
                     <option value="">Selecteer een categorie</option>
                         <?php while ($row = $artiknaam->fetch_assoc()) { ?>
