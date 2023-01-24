@@ -43,7 +43,7 @@
                 <a class="flex-button" href="overzicht_van_alle_apparaten.php"><button type="submit">Overzicht apparaten</button></a>
             </div>
             <div class="flex-container">
-                <a class="flex-button" href="retourneer"><button type="submit"> retourneren</button></a>
+                <a class="flex-button" href="retour.php"><button type="submit"> retourneren</button></a>
                 <a class="flex-button" href="accounts_toevoegen_en_verwijderen.php"><button type="submit">Accounts beheren</button></a>
                 <a class="flex-button" href="apparaten_toevoegen_verwijderen.php"><button type="submit">Apparaten beheren</button></a>
             </div>
