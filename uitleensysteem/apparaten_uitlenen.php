@@ -12,18 +12,13 @@ $result = $con->query($sql);
 } else {
   echo "Geen apparaten beschikbaar";
 }*/
-echo "1";
-if(isset($_GET['uitlenen'])){
-  $con->query("UPDATE apparaten SET uitlenen = '1' WHERE id='".$_GET['uitgeleend']."'");
-  Header("Location: apparaten_uitlenen.php");
+
+$sql = "UPDATE apparaten SET uitgeleend='uitgeleend' WHERE id= 1";
+if ($con->query($sql) === TRUE) {
+  echo "Record updated successfully";
+}else {
+  echo "Error updating record: " . $con->error;
 }
-echo "2";
-if(isset($_GET['retour'])){
-  $con->query("UPDATE apparaten SET uitlenen = '0' WHERE id='".$_GET['retour']."'");
-  Header("Location: apparaten_uitlenen.php");
-}
-echo "3";
-$con->close();
 ?>
 
 <!DOCTYPE html>
