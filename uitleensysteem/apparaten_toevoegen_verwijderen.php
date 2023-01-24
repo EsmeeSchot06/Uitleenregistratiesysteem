@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
             echo "Error: " . $sql . "
                 " . mysqli_error($con);
         }
-    }elseif($_POST['accept_button']=="delete"){
+    }elseif($_POST['form']=="delete"){
         $sql = "DELETE FROM apparaten WHERE id='".$_POST['art-select']."'";
         mysqli_query($con, $sql);
         echo "Apparaat verwijderd";
