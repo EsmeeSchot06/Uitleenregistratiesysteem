@@ -3,17 +3,7 @@ session_start();
 include("database.php");
 $sql = "SELECT id, naam, merk, type, uitgeleend FROM apparaten";
 $result = $con->query($sql);
-
-/*if ($result->num_rows > 0) {
-  // output data of each row
-  while($row = $result->fetch_assoc()) {
-  echo "id: " . $row["id"]. " - Name: " . $row["naam"]. " - merk: " . $row["merk"]. " - type: " . $row["type"]. " - uitgeleend: " . $row["uitgeleend"];
-}
-} else {
-  echo "Geen apparaten beschikbaar";
-}*/
-
-$sql = "UPDATE apparaten SET uitgeleend='uitgeleend' WHERE id= 2";
+$sql = "UPDATE apparaten SET uitgeleend='ingeleverd' WHERE id= '";
 if ($con->query($sql) === TRUE) {
   echo "Record updated successfully";
 }else {
@@ -89,7 +79,7 @@ input {
         <?php
         if ($result->num_rows > 0) {
         while($row = $result->fetch_assoc()) { ?>
-          <div><a><?= "Name: ".$row["naam"]." Merk: ".$row["merk"]." Type: ".$row["type"]. " - uitlenen: " . $row["uitgeleend"] ;?><a href="?uitlenen=<?= $row['id']?>">Uitlenen</a></a></div>
+          <div><a><?= "Name: ".$row["naam"]." Merk: ".$row["merk"]." Type: ".$row["type"]. " - uitlenen: " . $row["uitgeleend"] ;?><a href="?uitlenen=<?= $row['id']?>">Inleveren</a></a></div>
         <?php }}else{?>Geen items gevonden<?php }?>
       </div>
   </body>
