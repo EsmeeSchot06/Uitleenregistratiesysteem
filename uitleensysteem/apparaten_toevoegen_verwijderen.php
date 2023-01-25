@@ -105,6 +105,14 @@ $con->close();
             color: #fff;
             border-color: #000;
 }
+    .verwijderen{
+        border: 5px solid black;
+        padding: 10px;
+        border-radius: 1vw;
+        height: 20vh;
+        width: 50vw;
+        margin-left: 20%;
+    }
     .naam1{
         height: 6vh;
             width: 20vw;
@@ -116,6 +124,26 @@ $con->close();
             text-align: center;
             margin-left:31% ; 
     }
+    .knopje4{
+        position: absolute;
+        height: 6vh;
+        width: 6vw;
+        background-color: #fff;
+        color: #000;
+        border: 5px solid black;
+        border-radius: 1vw;
+        text-decoration: none;
+        text-align: center;
+        margin-left: -1%;
+        margin-top: 5%;
+    }
+    .knopje4:hover{
+        cursor: pointer;
+        background-color: #000;
+        color: #fff;
+        border-color: #000;
+    }
+
 </style>
 </head>
     <body>
@@ -143,6 +171,7 @@ $con->close();
         </div>
         <br>
         <div class="verwijderen">
+            <div class="naam1"
             <form method="POST">
                 <input type="hidden" name="form" value="delete">
                 <select name="art-select" value="">
@@ -152,7 +181,8 @@ $con->close();
                         <?php } ?>
                 </select>
                 <button type="submit" name="accept_button" class="knopje4"> apparaat verwijderen</button>
-            </form>
+                        </form>
+        </div>
         </div>
     </body>
 </html>
