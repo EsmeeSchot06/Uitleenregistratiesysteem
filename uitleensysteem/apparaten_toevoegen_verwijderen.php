@@ -105,6 +105,14 @@ $con->close();
             color: #fff;
             border-color: #000;
 }
+    .verwijderen{
+        border: 5px solid black;
+        padding: 10px;
+        border-radius: 1vw;
+        height: 20vh;
+        width: 50vw;
+        margin-left: 20%;
+    }
     .naam1{
         height: 6vh;
             width: 20vw;
@@ -116,14 +124,6 @@ $con->close();
             text-align: center;
             margin-left:31% ; 
     }
-    .verwijderen{
-        border: 5px solid black;
-        padding: 10px;
-        border-radius: 1vw;
-        height: 40vh;
-        width: 50vw;
-        margin-left: 20%;
-    }
     .knopje4{
         position: absolute;
         height: 6vh;
@@ -134,20 +134,15 @@ $con->close();
         border-radius: 1vw;
         text-decoration: none;
         text-align: center;
-        margin-left: 5%;
+        margin-left: 31%;
     }
     .knopje4:hover{
-    cursor: pointer;
-            background-color: #000;
-            color: #fff;
-            border-color: #000;
+        cursor: pointer;
+        background-color: #000;
+        color: #fff;
+        border-color: #000;
     }
-    .naam2{
-        position: absolute;
-        height: 6vh;
-        width: 6vw;
-        border: 5px solid black;
-    }
+    
 </style>
 </head>
     <body>
