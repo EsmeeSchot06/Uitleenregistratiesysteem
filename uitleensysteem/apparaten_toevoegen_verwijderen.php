@@ -13,7 +13,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
             echo "Error: " . $sql . "
                 " . mysqli_error($con);
         }
-    }elseif($_POST['accept_button']=="delete"){
+        }elseif($_POST['form']=="delete"){
         $sql = "DELETE FROM apparaten WHERE id='".$_POST['art-select']."'";
         mysqli_query($con, $sql);
         echo "Apparaat verwijderd";
@@ -171,7 +171,7 @@ $con->close();
         </div>
         <br>
         <div class="verwijderen">
-            <div class="naam1"
+            <div class="naam1">
             <form method="POST">
                 <input type="hidden" name="form" value="delete">
                 <select name="art-select" value="">
@@ -181,8 +181,8 @@ $con->close();
                         <?php } ?>
                 </select>
                 <button type="submit" name="accept_button" class="knopje4"> apparaat verwijderen</button>
-                        </form>
-        </div>
+            </form>
+            </div>
         </div>
     </body>
 </html>
