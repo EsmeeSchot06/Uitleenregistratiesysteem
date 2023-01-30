@@ -3,12 +3,23 @@ session_start();
 include("database.php");
 $sql = "SELECT id, naam, merk, type, uitgeleend FROM apparaten";
 $result = $con->query($sql);
-$sql = "UPDATE apparaten SET uitgeleend='ingeleverd' WHERE id= '";
+$sql = "UPDATE apparaten SET uitgeleend='ingeleverd'";
 if ($con->query($sql) === TRUE) {
-  echo "Apparaat uitgeleend";
+  echo "Apparaat ingeleverd";
 }else {
-  echo "Er is iets misgegaan, probeer opnieuw: " . $con->error;
+  echo "Er is iets misgegaan: " . $con->error;
 }
+
+if (isset($_POST['uitlenen'])) {
+  $id = $_POST['id'];
+  $sql = "UPDATE apparaten SET uitgeleend='ingeleverd' WHERE id='$id' ";
+  if ($con->query($sql) === TRUE) {
+    echo "Apparaat ingeleverd";
+  } else {
+    echo "Er is iets misgegaan: " . $con->error;
+  }
+}
+
 ?>
 
 <!DOCTYPE html>
