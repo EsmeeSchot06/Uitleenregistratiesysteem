@@ -5,9 +5,9 @@ $sql = "SELECT id, naam, merk, type, uitgeleend FROM apparaten";
 $result = $con->query($sql);
 $sql = "UPDATE apparaten SET uitgeleend='ingeleverd' WHERE id= '";
 if ($con->query($sql) === TRUE) {
-  echo "Record updated successfully";
+  echo "Apparaat uitgeleend";
 }else {
-  echo "Error updating record: " . $con->error;
+  echo "Er is iets misgegaan, probeer opnieuw: " . $con->error;
 }
 ?>
 
