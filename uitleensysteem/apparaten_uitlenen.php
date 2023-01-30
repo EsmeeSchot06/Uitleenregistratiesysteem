@@ -13,7 +13,7 @@ $result = $con->query($sql);
   echo "Geen apparaten beschikbaar";
 }*/
 
-+$sql = "UPDATE apparaten SET uitgeleend='uitgeleend' WHERE id= ";
+$sql = "UPDATE apparaten SET uitgeleend='uitgeleend' WHERE id='' ";
 if ($con->query($sql) === TRUE) {
   echo "Record updated successfully";
 }else {
