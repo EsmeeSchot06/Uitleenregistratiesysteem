@@ -6,7 +6,8 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
         $naam = $_POST['naam'];
         $merk = $_POST['merk'];
         $type = $_POST['type'];
-        $sql = "INSERT INTO apparaten (naam, merk, type) VALUES ('".$naam."','".$merk."','".$type."')";
+        $categorieën = $_POST['categorieë'];
+        $sql = "INSERT INTO apparaten (naam, merk, type, categorieën) VALUES ('".$naam."','".$merk."','".$type."','".$categorieën."')";
         if(mysqli_query($con, $sql)) {
             echo "nieuw apparaat toegevoegd";
         }else{
@@ -59,6 +60,17 @@ $con->close();
             margin-left:31% ;
     }
     .type{
+        height: 6vh;
+            width: 20vw;
+            background-color: #fff;
+            color: #000;
+            border: 5px solid black;
+            border-radius: 1vw;
+            text-decoration: none;
+            text-align: center;
+            margin-left:31% ;
+    }
+    .categorieën{
         height: 6vh;
             width: 20vw;
             background-color: #fff;
@@ -164,6 +176,11 @@ $con->close();
             <div class="type">
             type:<br>
             <input type="text" name="type">
+            </div>
+            <br>
+            <div class="categorieën">
+            categorie:<br>
+            <input type="text" name="categorieën" >
             </div>
             <br><br>
             <input type="submit" name="save" value="submit" class="knopje2">
