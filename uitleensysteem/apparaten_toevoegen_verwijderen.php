@@ -1,6 +1,10 @@
 <?php
 session_start();
 include ("database.php");
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    header('Location: logout.php');
+    exit;
+}
 if($_SERVER['REQUEST_METHOD'] == "POST") {
     if (isset($_POST['save'])){
         $naam = $_POST['naam'];

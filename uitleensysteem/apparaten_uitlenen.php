@@ -1,6 +1,10 @@
 <?php
 session_start();
 include("database.php");
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+  header('Location: logout.php');
+  exit;
+}
 $sql = "SELECT id, naam, merk, type, uitgeleend FROM apparaten";
 $result = $con->query($sql);
 

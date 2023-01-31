@@ -2,6 +2,10 @@
 session_start();
 include("database.php");
 include("functions.php");
+if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
+    header('Location: logout.php');
+    exit;
+}
 if($_SERVER['REQUEST_METHOD'] == "POST") {
     if($_POST['form']=="toevoegen"){
         //something was posted
