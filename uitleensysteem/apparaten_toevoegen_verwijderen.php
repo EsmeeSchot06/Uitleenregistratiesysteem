@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST") {
         $naam = $_POST['naam'];
         $merk = $_POST['merk'];
         $type = $_POST['type'];
-        $categorieën = $_POST['categorieë'];
+        $categorieën = $_POST['categorieën'];
         $sql = "INSERT INTO apparaten (naam, merk, type, categorieën) VALUES ('".$naam."','".$merk."','".$type."','".$categorieën."')";
         if(mysqli_query($con, $sql)) {
             echo "nieuw apparaat toegevoegd";
