@@ -29,11 +29,11 @@ $con->close();
 <head>
 <style>
     .toevoegen{
-        margin-top:10%;
+        margin-top:5%;
         border: 5px solid black;
         padding: 10px;
         border-radius: 1vw;
-        height: 40vh;
+        height: 50vh;
         width: 50vw;
         margin-left: 20%;
     }
