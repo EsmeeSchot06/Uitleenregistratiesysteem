@@ -9,7 +9,6 @@ $result = $con->query($sql);
     <head>
         <title>IPads</title>
 <style>
-
 </style>
 </head>
 <body>
