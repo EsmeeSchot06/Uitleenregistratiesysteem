@@ -24,7 +24,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         if($user_data['password'] == $password) {
           $_SESSION['logged_in'] = true;
           $_SESSION['user_id'] = $user_data['id'];
-          header("location: index.php");
+          header("location: login_cont.php");
           die;
         }
       }

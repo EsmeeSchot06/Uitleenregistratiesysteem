@@ -48,7 +48,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
         <center>
             <div class="flex-container">
                 <a class="flex-button" href="apparaten_uitlenen.php"><button type="submit">Apparaten uitlenen</button></a>
-                <a class="flex-button" href="overzicht_van_alle_apparaten.php"><button type="submit">Overzicht apparaten</button></a>
+                <a class="flex-button" href="index.php"><button type="submit">Overzicht apparaten</button></a>
             </div>
             <div class="flex-container">
                 <a class="flex-button" href="retour.php"><button type="submit"> retourneren</button></a>
