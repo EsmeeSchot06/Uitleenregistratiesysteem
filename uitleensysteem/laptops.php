@@ -23,13 +23,12 @@ $result = $con->query($sql);
             if ($row["categorieën"] === "lader") { ?>
                 <a><?= "Name: " . $row["naam"] . " Merk: " . $row["merk"]; ?>
                     <img src="https://cdn.discordapp.com/attachments/1065628030187339876/1065628577669857350/RE4LqQX.png">
-                    <p>Dit zijn alle iPads</p>
+                    <p>Dit zijn alle laptops</p>
             <?php }
         }
     } else { ?>
-            Geen ipads gevonden
+            Geen laptops gevonden
         <?php } ?>
-<img src="https://cdn.discordapp.com/attachments/1065628030187339876/1065628577669857350/RE4LqQX.png">
-<p>Dit zijn alle laptops</p>
+
 </body>
 </html>
