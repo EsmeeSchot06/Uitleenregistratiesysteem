@@ -83,7 +83,6 @@ include("database.php");
                 echo '<a href="docenten_pagina.php"><button type="submit" class="knopje3">terug</button></a>';
             }
             ?>
-
             <h2>Menu</h2>
             <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search.." title="Type in a category">
 
