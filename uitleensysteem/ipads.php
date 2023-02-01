@@ -28,24 +28,40 @@ $result = $con->query($sql);
             color: #fff;
             border-color: #000;
         }
+        .tekst{
+            position: absolute;
+            margin-top: 5%;
+        }
+        img {
+            position: absolute;
+            width: 400px;
+            height: 300px;
+            margin-left: 5%;
+        } 
+        .ipads{
+            position: absolute;
+            margin-top: 20%;
+        }  
     </style>
 </head>
 
 <body>
 <a href="index.php"><button type="submit" class="knopje3">terug</button></a>
+<div class="ipads">
     <?php
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             if ($row["categorieën"] === "ipad") { ?>
                 <a><?= "Name: " . $row["naam"] . " Merk: " . $row["merk"] . " Type: " . $row["type"]; ?>
-                    <img src="https://cdn.discordapp.com/attachments/1065628030187339876/1065628058758959114/9k.png">
-                    <p>Dit zijn alle iPads</p>
+                    
             <?php }
         }
     } else { ?>
             Geen ipads gevonden
         <?php } ?>
-
+    </div>
+        <img src="https://cdn.discordapp.com/attachments/1065628030187339876/1065628058758959114/9k.png">
+                    <p class="tekst">Dit zijn alle iPads</p>
 </body>
 
 </html>

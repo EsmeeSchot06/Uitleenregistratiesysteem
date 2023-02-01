@@ -27,22 +27,38 @@ $result = $con->query($sql);
             color: #fff;
             border-color: #000;
         }
+        .tekst{
+            position: absolute;
+            margin-top: 5%;
+        }
+        img {
+            position: absolute;
+            width: 400px;
+            height: 300px;
+            margin-left: 5%;
+        }
+        .snoeren{
+            position: absolute;
+            margin-top: 20%;
+        }
     </style>
 </head>
 <body>
 <a href="index.php"><button type="submit" class="knopje3">terug</button></a>
+<div class="snoeren">
 <?php
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             if ($row["categorieën"] === "snoer") { ?>
                 <a><?= "Name: " . $row["naam"] . " Merk: " . $row["merk"] . " Type: " . $row["type"]; ?>
-                    <img src="https://cdn.discordapp.com/attachments/1065628030187339876/1065630183970840596/cargadorusbmultipuerto000-scaled.png">
-                    <p>Dit zijn alle snoeren</p>
+                    
             <?php }
         }
     } else { ?>
             Geen snoeren gevonden
         <?php } ?>
-
+    </div>
+        <img src="https://cdn.discordapp.com/attachments/1065628030187339876/1065629827744403476/550x358.png">
+                    <p class="tekst">Dit zijn alle snoeren</p>
 </body>
 </html>

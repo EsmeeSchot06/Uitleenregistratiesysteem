@@ -27,29 +27,38 @@ $result = $con->query($sql);
             color: #fff;
             border-color: #000;
         }
-
+        .tekst{
+            position: absolute;
+            margin-top: 5%;
+        }
         img {
             position: absolute;
             width: 400px;
             height: 300px;
             margin-left: 5%;
         }
+        .laders{
+            position: absolute;
+            margin-top: 20%;
+        }
         </style>
 </head>
 <body>
 <a href="index.php"><button type="submit" class="knopje3">terug</button></a>
+<div class="laders">
 <?php
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             if ($row["categorieën"] === "lader") { ?>
                 <a><?= "Name: " . $row["naam"] . " Merk: " . $row["merk"] . " Type: " . $row["type"]; ?>
-                    <img src="https://cdn.discordapp.com/attachments/1065628030187339876/1065630183970840596/cargadorusbmultipuerto000-scaled.png">
-                    <p>Dit zijn alle laders</p>
+                    
             <?php }
         }
     } else { ?>
             Geen laders gevonden
         <?php } ?>
-
+    </div>
+        <img src="https://cdn.discordapp.com/attachments/1065628030187339876/1065630183970840596/cargadorusbmultipuerto000-scaled.png">
+                    <p class="tekst">Dit zijn alle laders</p>
 </body>
 </html>
