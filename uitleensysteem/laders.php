@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("database.php");
-$sql = "SELECT id, naam, merk, categorieën FROM apparaten";
+$sql = "SELECT id, naam, merk, type, categorieën FROM apparaten";
 
 $result = $con->query($sql);
 ?>
@@ -21,7 +21,7 @@ $result = $con->query($sql);
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
             if ($row["categorieën"] === "lader") { ?>
-                <a><?= "Name: " . $row["naam"] . " Merk: " . $row["merk"]; ?>
+                <a><?= "Name: " . $row["naam"] . " Merk: " . $row["merk"] . " Type: " . $row["type"]; ?>
                     <img src="https://cdn.discordapp.com/attachments/1065628030187339876/1065630183970840596/cargadorusbmultipuerto000-scaled.png">
                     <p>Dit zijn alle laders</p>
             <?php }
