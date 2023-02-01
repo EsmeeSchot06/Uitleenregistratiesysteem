@@ -86,14 +86,21 @@ input {
     <input type="hidden" name="form" value="updaten">
     </div>
     </form>
-        <?php
-        if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-               ?><input type="hidden" name="id" value="<?= $row['id'] ?>"> 
-               <button type="submit" name="uitlenen">Inleveren</button>
-
-          <div><a><?= "Name: ".$row["naam"]." Merk: ".$row["merk"]." Type: ".$row["type"]. " - uitlenen: " . $row["uitgeleend"] ;?><a href="?inleveren=<?= $row['id']?>">Inleveren</a></a></div>
-        <?php }}else{?>Geen items gevonden<?php }?>
+    <?php
+    if ($result->num_rows > 0) {
+      while ($row = $result->fetch_assoc()) { ?>
+        <form method="POST">
+          <div>
+            <a><?= "Name: " . $row["naam"] . " Merk: " . $row["merk"] . " Type: " . $row["type"] . " - uitgeleend: " . $row["uitgeleend"]; ?>
+              <input type="hidden" name="id" value="<?= $row['id'] ?>">
+              <button type="submit" name="uitlenen">inleveren</button>
+            </a>
+          </div>
+        </form>
+      <?php }
+    } else { ?>
+      Geen items gevonden
+    <?php } ?>
       </div>
   </body>
 </html>
