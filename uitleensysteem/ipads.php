@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("database.php");
-$sql = "SELECT id, naam, merk, type FROM apparaten";
+$sql = "SELECT id, naam, merk, type, catogorieën FROM apparaten";
 $result = $con->query($sql);
 $con->close();
 ?>
