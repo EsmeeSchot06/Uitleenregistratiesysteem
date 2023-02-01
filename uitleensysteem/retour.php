@@ -8,9 +8,9 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 $sql = "SELECT id, naam, merk, type, uitgeleend FROM apparaten";
 $result = $con->query($sql);
 
-if (isset($_POST['inleveren'])) {
-  $id = $_POST['id'];
-  $sql = "UPDATE apparaten SET uitgeleend='inleveren' WHERE id='$id' ";
+if (isset($_POST['uitlenen'])) {
+  $id = $_POST['id']; 
+  $sql = "UPDATE apparaten SET uitgeleend='ingeleverd' WHERE id='$id' ";
   if ($con->query($sql) === TRUE) {
     echo "Record updated successfully";
   } else {
@@ -18,6 +18,7 @@ if (isset($_POST['inleveren'])) {
   }
 }
 
+$con->close();
 ?>
 
 <!DOCTYPE html>
@@ -87,8 +88,11 @@ input {
     </form>
         <?php
         if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) { ?>
-          <div><a><?= "Name: ".$row["naam"]." Merk: ".$row["merk"]." Type: ".$row["type"]. " - uitlenen: " . $row["uitgeleend"] ;?><a href="?uitlenen=<?= $row['id']?>">Inleveren</a></a></div>
+        while($row = $result->fetch_assoc()) {
+               ?><input type="hidden" name="id" value="<?= $row['id'] ?>"> 
+               <button type="submit" name="uitlenen">Inleveren</button>
+
+          <div><a><?= "Name: ".$row["naam"]." Merk: ".$row["merk"]." Type: ".$row["type"]. " - uitlenen: " . $row["uitgeleend"] ;?><a href="?inleveren=<?= $row['id']?>">Inleveren</a></a></div>
         <?php }}else{?>Geen items gevonden<?php }?>
       </div>
   </body>
