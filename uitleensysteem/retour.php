@@ -8,18 +8,13 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 $sql = "SELECT id, naam, merk, type, uitgeleend FROM apparaten";
 $result = $con->query($sql);
 
-$sql = "UPDATE apparaten SET uitgeleend='ingeleverd'"; 
-if ($con->query($sql) === TRUE) { 
-  echo "Apparaat ingeleverd"; 
-}else { echo "Er is iets misgegaan: " . $con->error; }
-
-if (isset($_POST['uitlenen'])) {
+if (isset($_POST['inleveren'])) {
   $id = $_POST['id'];
-  $sql = "UPDATE apparaten SET uitgeleend='ingeleverd' WHERE id='$id' ";
+  $sql = "UPDATE apparaten SET uitgeleend='inleveren' WHERE id='$id' ";
   if ($con->query($sql) === TRUE) {
-    echo "Apparaat ingeleverd";
+    echo "Record updated successfully";
   } else {
-    echo "Er is iets misgegaan: " . $con->error;
+    echo "Error updating record: " . $con->error;
   }
 }
 

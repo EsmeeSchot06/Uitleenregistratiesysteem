@@ -8,7 +8,7 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
 $sql = "SELECT id, naam, merk, type, uitgeleend FROM apparaten";
 $result = $con->query($sql);
 
-if (isset($_POST['uitlenen'])) {
+if (isset($_POST['uitgeleend'])) {
   $id = $_POST['id'];
   $sql = "UPDATE apparaten SET uitgeleend='uitgeleend' WHERE id='$id' ";
   if ($con->query($sql) === TRUE) {
